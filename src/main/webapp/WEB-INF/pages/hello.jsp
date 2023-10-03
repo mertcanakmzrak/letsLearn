@@ -44,15 +44,15 @@
                                                             style="width: 352px; height: 45px;">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <input type="text" name="degree" id="degree"  class="form-control custom-input" placeholder="Degree"
+                                                        <input type="text"  id="degree"  class="form-control custom-input" placeholder="Degree"
                                                             style="width: 352px; height: 45px;">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <input type="text" name="age" id="age" class="form-control custom-input" placeholder="Age"
+                                                        <input type="text"  id="age" class="form-control custom-input" placeholder="Age"
                                                             style="width: 352px; height: 45px;">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <select class="form-select custom-select" name="sex" id="sex" required
+                                                        <select class="form-select custom-select"  id="sex" required
                                                             style="width: 352px; height: 45px;">
                                                             <option selected disabled value="">Choose...</option>
                                                             <option>Male</option>
