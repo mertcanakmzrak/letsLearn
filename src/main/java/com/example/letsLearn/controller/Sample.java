@@ -11,9 +11,9 @@ public class Sample {
     public String hello(Model model) {
         return "hello";
     }
-    @GetMapping("/contentpage?name={name}")
+    @GetMapping("/contentpage")
     public String contentpage(Model model) {
-        System.out.println("name=");
+
         return "contentpage";
     }
 
