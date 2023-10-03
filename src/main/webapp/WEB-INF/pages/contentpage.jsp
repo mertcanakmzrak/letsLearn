@@ -37,7 +37,7 @@
                        style="width: 164px; height: 36px;">Back</button>
                </div>
                <div class="col ">
-                   <div class="col wordimg " style="width: 500px; height: 400px; background-image: url(shoe\ 1.png);  background-repeat: no-repeat;
+                   <div class="col wordimg " style="width: 500px; height: 400px; background-image: url(./img/shoe.png);  background-repeat: no-repeat;
            background-size: contain;"></div>
                </div>
                <div class="col w d-flex  ">
