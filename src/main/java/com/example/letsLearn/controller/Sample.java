@@ -7,9 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class Sample {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String hello(Model model) {
-
         return "hello";
     }
+    @GetMapping("/contentpage?name={name}")
+    public String contentpage(Model model) {
+        System.out.println("name=");
+        return "contentpage";
+    }
+
+
 }
