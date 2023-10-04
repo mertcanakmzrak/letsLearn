@@ -38,13 +38,13 @@
                     </div>
 
                     <div class="form">
-                        <form action="/contentpage">
+                        <form action="/contentpage/grade">
                                                     <div class="mb-3">
-                                                        <input type="text" name="name" id="name" class="form-control custom-input" placeholder="Name"
+                                                        <input type="text"  id="name" class="form-control custom-input" placeholder="Name"
                                                             style="width: 352px; height: 45px;">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <input type="text"  id="degree"  class="form-control custom-input" placeholder="Degree"
+                                                        <input type="text"  id="degree" name="grade"  class="form-control custom-input" placeholder="Degree"
                                                             style="width: 352px; height: 45px;">
                                                     </div>
                                                     <div class="mb-3">

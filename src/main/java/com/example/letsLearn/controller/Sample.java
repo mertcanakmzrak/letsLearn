@@ -14,7 +14,7 @@ public class Sample {
     @GetMapping("/contentpage")
     public String contentpage(Model model) {
 
-        return "contentpage";
+        return "hello";
     }
 
 
