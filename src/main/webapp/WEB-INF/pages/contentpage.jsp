@@ -42,9 +42,7 @@
                             style="width: 164px; height: 36px;">Back</button>
                     </div>
                     <div class="col ">
-                        <<<<<<< HEAD <div class="col wordimg " style="width: 500px; height: 400px; background-image: url(./img/shoe.png);  background-repeat: no-repeat;
-           background-size: contain;">
-                    </div>
+
 
                     <c:forEach items="${wordList}" var="word" varStatus="loop">
                         <div id="img${loop.index}"
