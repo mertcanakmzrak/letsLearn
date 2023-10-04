@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -8,14 +9,14 @@
     <title>Merhaba</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body style="background-color: #1F41A9;">
     <div class="background">
-        <img id="vector" src="./svg/Vector 1.svg" alt="vector">
-        <img id="ellipse1" src="./svg/Ellipse.svg" alt="ellipse1">
-        <img id="ellipse2" src="./svg/Ellipse (1).svg" alt="ellipse2">
+        <img id="vector" src="../svg/Vector 1.svg" alt="vector">
+        <img id="ellipse1" src="../svg/Ellipse.svg" alt="ellipse1">
+        <img id="ellipse2" src="../svg/Ellipse (1).svg" alt="ellipse2">
     </div>
      <div class="topbar ">
            <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="97" height="45" viewBox="0 0 97 45"
@@ -26,25 +27,30 @@
                </svg></div>
 
        </div>
-       <div class="word">Shoe</div>
-       <div class="line"></div>
 
+     <c:forEach items="${wordList}" var="word" varStatus="loop">
+           <div class="word text-center" id="word${loop.index}" style="display: none;">${word.word}</div>
+       </c:forEach>
+       <div class="line"></div>
 
        <div class="container text-center mt-5">
            <div class="row ">
                <div class="col w ">
-                   <button type="submit" name="age" class="custom-back custom-btn" placeholder="Age" onclick="saveData()"
+                   <button type="submit" id="backButton" class="custom-back custom-btn"
                        style="width: 164px; height: 36px;">Back</button>
                </div>
                <div class="col ">
-                   <div class="col wordimg " style="width: 500px; height: 400px; background-image: url(shoe\ 1.png);  background-repeat: no-repeat;
-           background-size: contain;"></div>
+
+                  <c:forEach items="${wordList}" var="word" varStatus="loop">
+                     <div  id="img${loop.index}" style="display: none; width: 500px; height: 400px; background-image: url(${word.img});  background-repeat: no-repeat; background-size: contain;"></div>
+                  </c:forEach>
+
                </div>
                <div class="col w d-flex  ">
                    <div class="w d-flex rightbtns">
-                       <button type="submit" name="age" class=" custom-btn" placeholder="Age" onclick="saveData()"
+                       <button type="submit" class=" custom-btn"  id="nextButton"
                            style="width: 164px; height: 36px;margin-right: 30px;">Next</button>
-                       <button type="submit" name="age" class=" custom-btn" placeholder="Age" onclick="saveData()"
+                       <button type="submit" class=" custom-btn"
                            style="width: 164px; height: 36px;">Skip To Test</button>
 
                    </div>
@@ -53,10 +59,46 @@
            </div>
        </div>
 
+<script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+var backButton = document.getElementById("backButton");
+backButton.addEventListener("click", function() {
+
+    var targetURL = "/";
+
+    window.location.href = targetURL;
+});
+</script>
+    <script>
+        var currentIndex = 0;
+        var nextButton = document.getElementById("nextButton");
+
+        // İlk kelimeyi görüntüle
+        document.getElementById("word0").style.display = "block";
+        document.getElementById("img0").style.display = "block";
+
+        nextButton.addEventListener("click", function() {
+            // Şu anki kelimeyi gizle
+            document.getElementById("word" + currentIndex).style.display = "none";
+            document.getElementById("img" + currentIndex).style.display = "none";
+
+            if (currentIndex < ${wordList.size() - 1}) {
+                currentIndex++;
+
+                // Bir sonraki kelimeyi görüntüle
+                document.getElementById("word" + currentIndex).style.display = "block";
+                                document.getElementById("img" + currentIndex).style.display = "block";
+
+            } else {
+                // Son öğeye ulaşıldığında yapılacak işlemler burada olabilir.
+                console.log("Son öğeye ulaşıldı.");
+
+                document.getElementById("word0").style.display = "block";
+                document.getElementById("img0").style.display = "block";
+
+            }
+        });
+    </script>
 </body>
 
 </html>
