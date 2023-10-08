@@ -41,10 +41,7 @@
                             style="width: 164px; height: 36px;">Back</button>
                     </div>
                     <div class="col ">
-                        <<<<<<< HEAD <div class="col wordimg " style="width: 500px; height: 400px; background-image: url(./img/shoe.png);  background-repeat: no-repeat;
-           background-size: contain;">
-                    </div>
-                    =======
+
 
                     <c:forEach items="${wordList}" var="word" varStatus="loop">
                         <div id="img${loop.index}"
@@ -58,7 +55,7 @@
                     <div class="w d-flex rightbtns">
                         <button type="submit" class=" custom-btn" id="nextButton"
                             style="width: 164px; height: 36px;margin-right: 30px;">Next</button>
-                        <button type="submit" class=" custom-btn" style="width: 164px; height: 36px;">Skip To
+                        <button type="submit" class=" custom-btn" id="skipButton" style="width: 164px; height: 36px;">Skip To
                             Test</button>
 
                     </div>
@@ -76,6 +73,13 @@
 
                     window.location.href = targetURL;
                 });
+                 var backButton = document.getElementById("skipButton");
+                                backButton.addEventListener("click", function () {
+
+                                    var targetURL = "/testpage";
+
+                                    window.location.href = targetURL;
+                                });
             </script>
             <script>
                 var currentIndex = 0;
