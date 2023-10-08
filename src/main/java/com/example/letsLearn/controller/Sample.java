@@ -16,6 +16,11 @@ public class Sample {
 
         return "hello";
     }
+    @GetMapping("/testpage")
+    public String testpage(Model model) {
+
+        return "testpage";
+    }
 
 
 }

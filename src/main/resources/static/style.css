@@ -1,6 +1,7 @@
-   @font-face {
+      @font-face {
             font-family: 'PT Sans';
             src: url('pathto/ptsans.ttf') format('truetype');
+            /* Font dosyasının yolunu düzeltin */
         }
 
         body {
@@ -18,15 +19,23 @@
         .svg-container {
             display: flex;
             flex-direction: column;
+            /* Stack the SVGs vertically */
             align-items: center;
+            /* Center the SVGs horizontally */
             margin-bottom: 20px;
+            /* Optional: Add margin between the SVGs */
+
         }
 
         .custom-input {
             background-color: transparent;
+            /* Arka plan rengini kaldırır */
             border: 1px solid #ccc;
+            /* 2 piksel kalınlığında gri bir sınır ekler */
             border-radius: 15px;
+            /* Kenarları yuvarlar */
             padding-left: 20px;
+            /* İçeriği sınırdan uzaklaştırır */
             color: #ccc;
             font-weight: bold;
             font-size: 15px;
@@ -36,6 +45,8 @@
 
         .custom-input::placeholder {
             color: #A5A5A5;
+            /* Yeni placeholder rengini burada belirtin */
+
         }
 
         .custom-input:focus {
@@ -52,7 +63,9 @@
             padding-left: 20px;
             color: #A5A5A5;
             appearance: none;
+            /* Tarayıcıya özgü stil özelliklerini kapatma */
             background-image: none;
+            /* Açılır menü oku eklemek */
 
         }
 
@@ -62,7 +75,9 @@
 
             color: #000000;
             appearance: none;
+            /* Tarayıcıya özgü stil özelliklerini kapatma */
             background-image: none;
+            /* Açılır menü oku eklemek */
             box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
@@ -102,80 +117,119 @@
             width: 13%;
             z-index: -1;
         }
-         .topbar {
-                    width: 100%;
-                    height: 127px;
-                    background-color: #274FC7;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
-                }
 
-                .topbar::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 1px;
-                    /* Çizgi kalınlığını burada ayarlayabilirsiniz */
-                    background-color: #fff;
-                    /* Çizgi rengini burada ayarlayabilirsiniz */
-                }
+        .topbar {
+            width: 100%;
+            height: 127px;
+            background-color: #274FC7;
+            display: flex;
 
-                .line {
-                    width: 100%;
-                    height: 1px;
-                    background-color: #fff;
-                }
+            align-items: center;
+            position: relative;
+        }
 
-                .word {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 48px;
-                    color: #fff;
-                    font-weight: bold;
-                }
+        .topbar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            /* Çizgi kalınlığını burada ayarlayabilirsiniz */
+            background-color: #fff;
+            /* Çizgi rengini burada ayarlayabilirsiniz */
+        }
 
-                .wordimg {
-                    background-position: center;
-                }
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+        }
+
+        .word {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            color: #fff;
+            font-weight: bold;
+
+        }
+
+        .infos {
+            display: flex;
+            justify-content: center;
+            margin-left:150px;
+            font-size: 32px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .time{
+            width: 50%;
+
+        }
+        .score {
+            margin-left: 400px;
+            width: 50%;
+
+        }
+
+        .wordimg {
+            background-position: center;
+        }
+
+        .logo {
+            margin-left: 40px;
+        }
 
 
 
 
 
+        .back {
+            position: relative;
+        }
 
-                .back {
-                    position: relative;
-                }
+        .w {
+            position: relative;
+        }
 
-                .w {
-                    position: relative;
-                }
+        .custom-back {
+            border: 1px solid #FF0000;
+            color: #FF0000;
+            position: absolute;
+            bottom: 0;
+            left: 100px;
+        }
 
-                .custom-back {
-                    border: 1px solid #FF0000;
-                    color: #FF0000;
-                    position: absolute;
-                    bottom: 0;
-                    left: 100px;
-                }
+        .next {
+            position: absolute;
+            bottom: 0;
 
-                .next {
-                    position: absolute;
-                    bottom: 0;
+        }
 
-                }
+        .skip {
+            position: absolute;
+            bottom: 0;
+        }
 
-                .skip {
-                    position: absolute;
-                    bottom: 0;
-                }
+        .rightbtns {
+            position: absolute;
+            bottom: 0;
+        }
 
-                .rightbtns {
-                    position: absolute;
-                    bottom: 0;
-                }
+        @media screen and (max-width: 601px) {
+  .infos{
+    font-size: 6vw;
+    margin-left: 10px;
+  }
+  .score{
+    margin-left: 10px;
+  }
+
+}
+.hover:hover{
+ box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ cursor:pointer;
+}
