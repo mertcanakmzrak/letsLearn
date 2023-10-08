@@ -49,7 +49,7 @@
                         </div>
                     </c:forEach>
 
-                    >>>>>>> main
+                
                 </div>
                 <div class="col w d-flex  ">
                     <div class="w d-flex rightbtns">
