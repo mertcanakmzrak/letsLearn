@@ -17,16 +17,6 @@ public class WordController {
         this.wordRepository=wordRepository;
     }
 
-
-
-   /* @GetMapping("/grade")
-    public List<Word> getAllGrade(@RequestParam("grade") String grade, Model model){
-        List<Word> wordList = wordRepository.findByGrade(grade);
-        System.out.println(wordList);
-        model.addAttribute("words", wordList);
-        return wordList;
-
-    }*/
     @GetMapping("/grade")
     public String getAllGrade(@RequestParam("grade") String grade, Model model) {
         List<Word> wordList = wordRepository.findByGrade(grade);
