@@ -8,6 +8,8 @@ import lombok.Data;
 @Table(name = "word")
 @Data
 public class Word {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,3 +22,4 @@ public class Word {
 
 
 }
+

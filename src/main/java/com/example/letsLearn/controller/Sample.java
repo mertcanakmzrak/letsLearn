@@ -18,8 +18,12 @@ public class Sample {
     }
     @GetMapping("/testpage")
     public String testpage(Model model) {
-
         return "testpage";
+    }
+    @GetMapping("/resultpage")
+    public String resultpage(Model model) {
+
+        return "resultpage";
     }
 
 
