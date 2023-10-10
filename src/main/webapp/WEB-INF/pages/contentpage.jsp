@@ -32,6 +32,7 @@
             <c:forEach items="${wordList}" var="word" varStatus="loop">
                 <div class="word text-center" id="word${loop.index}" style="display: none;">${word.word}</div>
             </c:forEach>
+
             <div class="line"></div>
 
             <div class="container text-center mt-5">
@@ -43,27 +44,27 @@
                     <div class="col ">
 
 
-                    <c:forEach items="${wordList}" var="word" varStatus="loop">
-                        <div id="img${loop.index}"
-                            style="display: none; width: 500px; height: 400px; background-image: url(${word.img});  background-repeat: no-repeat; background-size: contain;">
-                        </div>
-                    </c:forEach>
-
-                    >>>>>>> main
-                </div>
-                <div class="col w d-flex  ">
-                    <div class="w d-flex rightbtns">
-                        <button type="submit" class=" custom-btn" id="nextButton"
-                            style="width: 164px; height: 36px;margin-right: 30px;">Next</button>
-                        <button type="submit" class=" custom-btn" id="skipButton" style="width: 164px; height: 36px;">Skip To
-                            Test</button>
+                        <c:forEach items="${wordList}" var="word" varStatus="loop">
+                            <div id="img${loop.index}"
+                                style="display: none; width: 500px; height: 400px; background-image: url(${word.img});  background-repeat: no-repeat; background-size: contain;">
+                            </div>
+                        </c:forEach>
 
                     </div>
+                    <div class="col w d-flex  ">
+                        <div class="w d-flex rightbtns">
+                            <button type="submit" class=" custom-btn" id="nextButton"
+                                style="width: 164px; height: 36px;margin-right: 30px;">Next</button>
+                            <button type="submit" class=" custom-btn" id="skipButton"
+                                style="width: 164px; height: 36px;">Skip To
+                                Test</button>
 
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            </div>
-
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
 
                 var backButton = document.getElementById("backButton");
@@ -73,13 +74,25 @@
 
                     window.location.href = targetURL;
                 });
-                 var backButton = document.getElementById("skipButton");
-                                backButton.addEventListener("click", function () {
+                var skipButton = document.getElementById("skipButton");
+                skipButton.addEventListener("click", function () {
 
-                                    var targetURL = "/testpage";
+                    var targetURL = "/testpage";
+                    window.location.href = targetURL;
 
-                                    window.location.href = targetURL;
-                                });
+                    var jsonStr = ${ jsonString };
+                    console.log(jsonStr);
+
+
+                    for (var i = 0; i < jsonStr.length; i++) {
+                        jsonStr[i].isAsked = false;
+                        jsonStr[i].isTrue = false;
+                    }
+
+                    var jsonWordList = JSON.stringify(jsonStr);
+                    localStorage.setItem('words', jsonWordList);
+
+                });
             </script>
             <script>
                 var currentIndex = 0;
@@ -94,7 +107,7 @@
                     document.getElementById("word" + currentIndex).style.display = "none";
                     document.getElementById("img" + currentIndex).style.display = "none";
 
-                    if (currentIndex <  ${wordList.size() - 1} ) {
+                    if (currentIndex < ${ wordList.size() - 1 } ) {
                     currentIndex++;
 
                     // Bir sonraki kelimeyi görüntüle
@@ -111,6 +124,7 @@
                 }
         });
             </script>
+
         </body>
 
         </html>
