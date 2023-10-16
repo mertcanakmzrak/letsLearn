@@ -30,40 +30,62 @@
             </div>
 
             <c:forEach items="${wordList}" var="word" varStatus="loop">
-                <div class="word text-center" id="word${loop.index}" style="display: none;">${word.word}</div>
+                <div class="word text-center" id="word${loop.index}" style="display: none;">${word.word}: ${word.mean}</div>
             </c:forEach>
 
             <div class="line"></div>
 
-            <div class="container text-center mt-5">
-                <div class="row ">
-                    <div class="col w ">
-                        <button type="submit" id="backButton" class="custom-back custom-btn"
-                            style="width: 164px; height: 36px;">Back</button>
-                    </div>
-                    <div class="col ">
 
 
-                        <c:forEach items="${wordList}" var="word" varStatus="loop">
-                            <div id="img${loop.index}"
-                                style="display: none; width: 500px; height: 400px; background-image: url(${word.img});  background-repeat: no-repeat; background-size: contain;">
-                            </div>
-                        </c:forEach>
 
-                    </div>
-                    <div class="col w d-flex  ">
-                        <div class="w d-flex rightbtns">
-                            <button type="submit" class=" custom-btn" id="nextButton"
-                                style="width: 164px; height: 36px;margin-right: 30px;">Next</button>
-                            <button type="submit" class=" custom-btn" id="skipButton"
-                                style="width: 164px; height: 36px;">Skip To
-                                Test</button>
 
-                        </div>
 
-                    </div>
+
+
+    <div class="container-fluid text-center">
+        <div class="row align-items-end  mt-5 ">
+            <div class=" col-lg col-mg order-lg-2  inner-div ">
+             <c:forEach items="${wordList}" var="word" varStatus="loop">
+                <div id="img${loop.index}" class="imgcard" style=" display: none; background-image: url(${word.img}); "> </div>
+                                        </c:forEach>
+
+
+            </div>
+            <div class=" col-lg col-md order-lg-1  mt-2 ">
+                <button type="submit" id="backButton" class="custom-back custom-btn"
+                    style="width: 164px; height: 36px;">Back</button>
+            </div>
+            <div class=" col-lg col-md order-lg-3  mt-2">
+                <div class=" ">
+                    <button type="submit" class="custom-btn" id="nextButton"
+                        style="width: 164px; height: 36px;">Next</button>
+                    <button type="submit" class=" custom-btn" id="skipButton" style="width: 164px; height: 36px;">Skip
+                        To
+                        Test</button>
                 </div>
             </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
 

@@ -196,12 +196,10 @@
         }
 
         .custom-back {
-            border: 1px solid #FF0000;
-            color: #FF0000;
-            position: absolute;
-            bottom: 0;
-            left: 100px;
-        }
+                   border: 1px solid #FF0000;
+                   color: #FF0000;
+
+               }
 
         .next {
             position: absolute;
@@ -233,3 +231,22 @@
  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  cursor:pointer;
 }
+.imgcard{
+    background-position:center;
+    width: 500px;
+    height: 400px;
+    background-repeat: no-repeat; background-size: contain;
+}
+@media screen and (max-width: 800px) {
+    .imgcard{
+
+        width: 300px;
+        height: 300px;
+    }
+  }
+  .inner-div{
+    display: flex;
+  justify-content: center; /* Yatay ortalama için */
+  align-items: center;
+  }
+
