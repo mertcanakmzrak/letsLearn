@@ -85,10 +85,10 @@
             var score = document.getElementById("score");
             var times = document.getElementById("time");
 
-            names.value = userObject.name;
-            degrees.value = userObject.degree;
-            score.value = resultObject.scoreIndex;
-            times.value = resultObject.timerValue;
+            names.value = "Name = "+ userObject.name;
+            degrees.value = "Degree = "+userObject.degree;
+            score.value ="Score = "+resultObject.scoreIndex;
+            times.value = "Time = "+resultObject.timerValue;
 
             var intScoreIndex = Number(resultObject.scoreIndex);
 

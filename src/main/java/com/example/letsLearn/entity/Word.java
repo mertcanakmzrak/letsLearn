@@ -19,7 +19,5 @@ public class Word {
     private String mean;
     private String img;
 
-
-
 }
 

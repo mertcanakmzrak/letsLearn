@@ -120,7 +120,7 @@
                             score.innerHTML = "Score=" + scoreIndex;
                             word.isTrue == true;
                             word.isAsked == false;
-                            showNextPair(); // Sonraki kelimeye geçmek için showNextPair() fonksiyonunu çağırın.
+                            showNextPair();
                         } else {
                             if (scoreIndex <= 0) {
                                 scoreIndex == 0;
@@ -141,24 +141,16 @@
                 function showNextPair() {
                     var demoElement = document.getElementById("demo");
                     while (demoElement.firstChild) {
-
-
                         demoElement.removeChild(demoElement.firstChild);
                     }
-
                     if (currentIndex < wordList.length) {
-
                         var currentWord1 = wordList[currentIndex];
                         currentWord1.isAsked = true;
-
-
-
                         var randomNumber = Math.floor(Math.random() * wordList.length - 1) + 1;
                         var currentWord2 = wordList[randomNumber];
                         if (currentWord1 != currentWord2) {
                             var randomOrder = Math.random() < 0.5 ? [currentWord1, currentWord2] : [currentWord2, currentWord1];
 
-                            // Oluşturulan div'leri ekrana ekleyin
                             var div1 = createDiv(randomOrder[0]);
                             var div2 = createDiv(randomOrder[1]);
                             var demoElement = document.getElementById("demo");
@@ -168,8 +160,6 @@
                             var newWord = document.getElementById("word");
                             newWord.innerHTML = '';
                             newWord.innerHTML = currentWord1.word;
-                            // ...
-
                             currentIndex += 1;
                         }
                         else {
@@ -187,7 +177,7 @@
                     }
                 }
 
-                // Sayfa yüklendiğinde ilk kelime çiftini göster
+
                 showNextPair();
 
             </script>
