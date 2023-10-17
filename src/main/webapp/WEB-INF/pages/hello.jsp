@@ -92,7 +92,6 @@
             crossorigin="anonymous"></script>
         <script>
             function saveData() {
-                // Formdaki verileri alın
                 var name = document.getElementById("name").value;
                 var degree = document.getElementById("degree").value;
                 var age = document.getElementById("age").value;
@@ -100,8 +99,7 @@
                 const person = { name, degree, age, sex };
                 localStorage.setItem('userData', JSON.stringify(person));
 
-                // Kullanıcıya bilgi ver
-                alert("Veriler başarıyla kaydedildi.");
+                alert("Data saved successfully.");
             }
 
             // Sayfa yüklendiğinde LocalStorage'dan verileri alıp formu doldurun

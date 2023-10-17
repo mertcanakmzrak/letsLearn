@@ -103,7 +103,6 @@
                     window.location.href = targetURL;
 
                     var jsonStr = ${ jsonString };
-                    console.log(jsonStr);
 
 
                     for (var i = 0; i < jsonStr.length; i++) {
@@ -138,7 +137,6 @@
 
                 } else {
                     // Son öğeye ulaşıldığında yapılacak işlemler burada olabilir.
-                    console.log("Son öğeye ulaşıldı.");
 
                     document.getElementById("word0").style.display = "block";
                     document.getElementById("img0").style.display = "block";

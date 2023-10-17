@@ -71,7 +71,6 @@
                 var scoreIndex = 0;
                 var selectedWords = [];
 
-                console.log(wordList)
 
 
 
